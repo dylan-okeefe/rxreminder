@@ -2,7 +2,7 @@
 	<head>
 		<title>Laravel</title>
 		
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 
 		<style>
 			body {
@@ -13,7 +13,7 @@
 				color: #B0BEC5;
 				display: table;
 				font-weight: 100;
-				font-family: 'Lato';
+				font-family: 'Roboto';
 			}
 
 			.container {

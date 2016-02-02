@@ -14,4 +14,12 @@ class ExampleTest extends TestCase {
 		$this->assertEquals(200, $response->getStatusCode());
 	}
 
+	public function aboutTest()
+	{
+		$response = $this->call('GET', 'about');
+
+		$this->assertEquals(200, $response->getStatusCode());
+		
+	}
+
 }
