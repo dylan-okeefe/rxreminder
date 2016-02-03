@@ -23,10 +23,8 @@
 
     <div class="form-group">
       {!! Form::label('take_at', 'Take At:' ) !!}
-      {!! Form::text('take_at', null, ['class' => 'form-control']) !!}
+      {!! Form::input('time', 'take_at', null, ['class' => 'form-control']) !!}
     </div>
-
-
 
     <div class="form-group">
       {!! Form::submit('Add Medication', ['class' => 'btn btn-primary form-control']) !!}

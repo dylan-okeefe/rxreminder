@@ -40,6 +40,12 @@ class MedicationsController extends Controller {
 
     $input = Request::all();
 
+    Medication::create($input);
+
+    // Medication::create(Request::all());
+
+    return redirect('medications');
+
   }
 
 }
