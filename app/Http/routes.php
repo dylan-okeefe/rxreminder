@@ -19,6 +19,12 @@ Route::get('about', 'PublicPagesController@about');
 
 Route::get('medications', 'MedicationsController@index');
 
+Route::get('medications/create', 'MedicationsController@create');
+
+Route::get('medications/{id}', 'MedicationsController@show');
+
+Route::post('medications', 'MedicationsController@store');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

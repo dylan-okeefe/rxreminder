@@ -9,7 +9,7 @@
   <h1>Your Medications</h1>
 
   @foreach ($medications as $medication)
-    <h4>{{ $medication->name }} - {{ $medication->mg }} taken at {{ $medication->take_at }}</h4>
+    {{ $medication->name }} - {{ $medication->mg }} taken at {{ $medication->take_at }} <a href="/medications/{{ $medication-> id }}"> View </a>
 
 
   @endforeach
