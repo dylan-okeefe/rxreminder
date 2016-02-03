@@ -20,11 +20,13 @@
       {!! Form::label('mg', 'MG:' ) !!}
       {!! Form::text('mg', null, ['class' => 'form-control']) !!}
     </div>
-    
-    <div class="input-group bootstrap-timepicker timepicker form-group">
-      Take At :  <input id="timepicker1" type="text" class="form-control input-small">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+
+    <div class="form-group">
+      {!! Form::label('take_at', 'Take At:' ) !!}
+      {!! Form::text('take_at', null, ['class' => 'form-control']) !!}
     </div>
+
+
 
     <div class="form-group">
       {!! Form::submit('Add Medication', ['class' => 'btn btn-primary form-control']) !!}
