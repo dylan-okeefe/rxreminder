@@ -17,6 +17,8 @@ Route::get('home', 'HomeController@index');
 
 Route::get('about', 'PublicPagesController@about');
 
+Route::get('medications', 'MedicationsController@index');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
