@@ -1,14 +1,14 @@
 <?php namespace App\Http\Controllers;
 
 
-
+use Auth;
 use App\Medication;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateMedicationRequest;
 use Illuminate\HttpResponse;
+use Request;
 
-// use Request;
 
 // use Illuminate\Http\Request;
 
@@ -16,9 +16,18 @@ class MedicationsController extends Controller {
 
 	//
 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
+
   public function index()
   {
-    $medications = Medication::all();
+
+    $userId = Auth::user()['id'];
+
+    $medications = Medication::where('user_id', $userId)->get();
 
     return view('medications.index')->with('medications', $medications);
   }
@@ -28,9 +37,14 @@ class MedicationsController extends Controller {
   {
     $medication = Medication::find($id);
 
-    // dd($medication);
+    if ($medication['user_id'] == Auth::user()['id'])
 
-    return view('medications.show', compact('medication'));
+      return view('medications.show', compact('medication'));
+
+    else
+
+      return redirect('medications');
+
   }
 
   public function create()
@@ -43,11 +57,13 @@ class MedicationsController extends Controller {
   public function store(CreateMedicationRequest $request)
   {
 
-    // $input = Request::all();
+    $input = Request::all();
 
-    // Medication::create($input);
+    $input['user_id'] = Auth::user()->id;
 
-    Medication::create($request->all());
+    Medication::create($input);
+
+    // Medication::create($request->all());
 
     return redirect('medications');
 

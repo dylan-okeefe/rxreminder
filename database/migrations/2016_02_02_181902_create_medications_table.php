@@ -15,6 +15,7 @@ class CreateMedicationsTable extends Migration {
 		Schema::create('medications', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('user_id');
 			$table->string('name');
 			$table->float('mg');
 			$table->time('take_at');

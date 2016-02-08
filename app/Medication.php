@@ -11,7 +11,8 @@ class Medication extends Model {
 
     'name',
     'mg',
-    'take_at'
+    'take_at',
+    'user_id'
 
   ];
 

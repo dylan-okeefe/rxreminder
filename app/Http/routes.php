@@ -25,6 +25,7 @@ Route::get('medications/{id}', 'MedicationsController@show');
 
 Route::post('medications', 'MedicationsController@store');
 
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
