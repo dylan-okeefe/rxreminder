@@ -10,7 +10,7 @@
 
   @foreach ($medications as $medication)
   <p>
-    {{ $medication->name }} - {{ $medication->mg }} taken at {{ DateTime::createFromFormat('Y-m-d H:i:s', $medication->take_at)->format('g:i a') }} <a href="/medications/{{ $medication-> id }}"> View </a>
+    {{ $medication->name }} - {{ $medication->mg }} MG taken at {{ DateTime::createFromFormat('Y-m-d H:i:s', $medication->take_at)->format('g:i a') }} <a href="/medications/{{ $medication-> id }}"> View </a>
   </p>
 
   @endforeach

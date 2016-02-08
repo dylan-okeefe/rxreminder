@@ -1,9 +1,14 @@
 <?php namespace App\Http\Controllers;
 
+
+
 use App\Medication;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+use App\Http\Requests\CreateMedicationRequest;
+use Illuminate\HttpResponse;
+
+// use Request;
 
 // use Illuminate\Http\Request;
 
@@ -35,14 +40,14 @@ class MedicationsController extends Controller {
 
   }
 
-  public function store()
+  public function store(CreateMedicationRequest $request)
   {
 
-    $input = Request::all();
+    // $input = Request::all();
 
-    Medication::create($input);
+    // Medication::create($input);
 
-    // Medication::create(Request::all());
+    Medication::create($request->all());
 
     return redirect('medications');
 
